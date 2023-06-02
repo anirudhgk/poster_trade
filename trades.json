@@ -1,0 +1,139 @@
+[{
+  "_id": {
+    "$oid": "638584f1edbb21bdb97eb780"
+  },
+  "topic": "Comics",
+  "name": "Watchman",
+  "details": "This Hugo Award-winning graphic novel chronicles the fall from grace of a group of super-heroes plagued by all-too-human failings. Price:$10",
+  "status": "Available",
+  "image": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/861dee87970655.5dc88bec08e4c.png",
+  "host": {
+    "$oid": "63858388edbb21bdb97eb77e"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669694705713"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669694705713"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63858525edbb21bdb97eb781"
+  },
+  "topic": "Comics",
+  "name": "Pluto",
+  "details": "Pluto is a cartoon character created by The Walt Disney Company. He is a yellow-orange color, medium-sized, short-haired dog with black ears. Price:$10",
+  "status": "Available",
+  "image": "https://pictures.abebooks.com/inventory/30401568415.jpg",
+  "host": {
+    "$oid": "63858388edbb21bdb97eb77e"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669694757231"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669694757231"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63858554edbb21bdb97eb782"
+  },
+  "topic": "Movies",
+  "name": "Avengers",
+  "details": "Avengers, is a 2012 American superhero film based on the Marvel Comics superhero team of the same name. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. Price:$10",
+  "status": "Available",
+  "image": "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg",
+  "host": {
+    "$oid": "63858388edbb21bdb97eb77e"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669694804773"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669694804773"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638585c9edbb21bdb97eb783"
+  },
+  "topic": "Comics",
+  "name": "Hawkeye",
+  "details": "Hawkeye (Clinton Francis Barton) is a fictional character appearing in American comic books published by Marvel Comics. Created by writer Stan Lee and artist Don Heck. Price:$10",
+  "status": "Available",
+  "image": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/5805354c527cc/clean.jpg",
+  "host": {
+    "$oid": "6385839eedbb21bdb97eb77f"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669694921780"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669694921780"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638585f8edbb21bdb97eb784"
+  },
+  "topic": "Movies",
+  "name": "Titanic",
+  "details": "Titanic is a 1997 American epic romance and disaster film directed, written, produced, and co-edited by James Cameron. Incorporating both historical and fictionalized aspects. Price:$10",
+  "status": "Available",
+  "image": "https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png",
+  "host": {
+    "$oid": "6385839eedbb21bdb97eb77f"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669694968296"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669694968296"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6385861bedbb21bdb97eb785"
+  },
+  "topic": "Movies",
+  "name": "Top Gun - Maverick",
+  "details": "Top Gun: Maverick is a 2022 American action drama film directed by Joseph Kosinski. It is the sequel to the 1986 film Top Gun and the second installment in the Top Gun film series. Price:$10",
+  "status": "Available",
+  "image": "https://upload.wikimedia.org/wikipedia/en/1/13/Top_Gun_Maverick_Poster.jpg",
+  "host": {
+    "$oid": "6385839eedbb21bdb97eb77f"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669695003157"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669695003157"
+    }
+  },
+  "__v": 0
+}]

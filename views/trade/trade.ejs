@@ -1,0 +1,51 @@
+<%- include('../partials/header.ejs') %>
+    <div class="body_content">
+        <div class="trade_name_cnt">
+            <h4>Poster Title:</h4>
+            <h3>
+                <%= trade.name %>
+            </h3>
+            <% if(user==trade.host._id) { %>
+                <form>
+                    <button type="submit" formmethod="GET" formaction="/trades/<%= trade.id %>/edit">
+                        Edit
+                    </button>
+                    <button type="submit" formmethod="POST" formaction="/trades/<%= trade.id %>?_method=DELETE">
+                        Delete
+                    </button>
+                </form>
+                <% } %>
+                    <% if(user!=trade.host._id) { %>
+                        <form>
+                            <%if(trade.status==='Available' ){%>
+                                <button type="submit" formmethod="GET" formaction="/trades/<%=trade.id%>/trade">
+                                    Trade
+                                </button>
+                                <%}else{%>
+                                    <button type="submit" formmethod="POST" formaction="/trades/<%=trade.id%>/withdraw">
+                                        Cancel Trade
+                                    </button>
+                                    <% } %>
+                                        <% if(!hasWatch) { %>
+                                            <button type="submit" formmethod="POST"
+                                                formaction="/users/<%= trade.id %>/watch">
+                                                Watch
+                                            </button>
+                                            <% } else { %>
+                                                <button type="submit" formmethod="POST"
+                                                    formaction="/users/<%= trade.id %>/unwatch">
+                                                    Unwatch
+                                                </button>
+                                                <% }%>
+                        </form>
+                        <% } %>
+        </div>
+        <div class="trade_image">
+            <img src="<%= trade.image %>" alt="Poster Image -> <%= trade.name %>">
+        </div>
+        <div>
+            <h3>Details</h3>
+            <%= trade.details %>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>

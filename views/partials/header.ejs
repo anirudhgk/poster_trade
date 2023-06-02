@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/CSS/common.css">
+    <title>Poster Trade</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <img src="/IMAGES/poster_logo.jpg" alt="poster trade logo" class="header_logo">
+        </a>
+        <span class="nav_header">
+            <a href="/trades/new">Start Trading!! </a>
+            <% if(!user){ %>
+                <a href="/users/new">Sign up</a>
+                <a href="/users/login">Login</a>
+                <% } else { %>
+                    <a href='/users/profile'>Profile</a>
+                    <a href='/users/logout'>Logout</a>
+                    <% } %>
+        </span>
+    </nav>
+    <hr>
+    <nav>
+        <span class="sub_nav">
+            <a href="/trades/">Trades</a>
+        </span>
+    </nav>
+
+    <% if(errorMessages.length> 0) {%>
+        <% errorMessages.forEach(message=>{%>
+            <div class='error'>
+                <%=message%>
+            </div>
+            <%});%>
+                <%}%>
+
+                    <% if(successMessages.length> 0) {%>
+
+                        <% successMessages.forEach(message=>{%>
+                            <div class='success'>
+                                <%=message%>
+                            </div>
+                            <%});%>
+                                <%}%>

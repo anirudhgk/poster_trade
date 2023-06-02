@@ -1,0 +1,42 @@
+<%- include('../partials/header.ejs')%>
+    <div class="body_content">
+        <h2>Trades that are for offer are:</h2>
+        <% if(trades.length){ %>
+            <form method="POST" action="/trades/<%=posterRequested.id%>/offer?_method=PUT">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Trade Name</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                    </tr>
+                    <% trades.forEach(trade=> { %>
+                        <tr>
+                            <td>
+                                <input type="radio" name="id" value="<%=trade.id%>" />
+                            </td>
+                            <td>
+                                <a href="/trades/<%=trade.id%>">
+                                    <%= trade.name %>
+                                </a>
+                            </td>
+                            <td>
+                                <%= trade.topic %>
+                            </td>
+                            <td>
+                                <%= trade.status %>
+                            </td>
+                        </tr>
+                        <% })%>
+                </table>
+                <button class="" type="submit">
+                    Trade
+                </button>
+            </form>
+            <% } else { %>
+                <p>
+                    You have no posters available to trade!
+                </p>
+                <% } %>
+    </div>
+    <%- include('../partials/footer.ejs')%>

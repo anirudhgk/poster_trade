@@ -1,0 +1,42 @@
+<%- include('../partials/header.ejs')%>
+    <div class="body_content">
+        <% if(trade1 && trade2) { %>
+            <table>
+                <tr>
+                    <td>
+                        <h4>
+                            <%=trade1.name %>
+                        </h4></br>
+                    </td>
+                    <td>
+                        <img src="<%=trade1.image%>" alt="preview image" width="120" height="160">
+                    </td>
+                    <td>
+                        <h4>
+                            <%=trade2.name %>
+                        </h4>
+                    </td>
+                    <td>
+                        <img src="<%=trade2.image%>" alt="preview image" width="120" height="160">
+                    </td>
+                    <td>
+                        <form class="float-left">
+                            <% if(user.isOfferStart){ %>
+                                <button class="delete_button" type="submit" formmethod="POST"
+                                    formaction="/trades/<%=offer.id%>/withdrawOffer?_method=DELETE">Withdraw
+                                    Offer</button>
+                                <% } else { %>
+                                    <button class="edit_button" type="submit" formmethod="POST"
+                                        formaction="/trades/<%=offer.id%>/acceptOffer?_method=PUT"> Accept </button>
+                                    <button class="delete_button" type="submit" formmethod="POST"
+                                        formaction="/trades/<%=offer.id%>/rejectOffer?_method=DELETE">Reject</button>
+                                    <%}%>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <% } else { %>
+                <p> You have not selected any posters to trade</p>
+                <%}%>
+    </div>
+    <%- include('../partials/footer.ejs')%>

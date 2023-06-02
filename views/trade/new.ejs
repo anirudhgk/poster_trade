@@ -1,0 +1,56 @@
+<%- include('../partials/header.ejs') %>
+    <div class="body_content">
+        <h1>Create trade form!</h1>
+        <form action='/trades' method='POST'>
+            <table>
+                <tr>
+                    <td>
+                        <label for="topic">Topic (Category):</label>
+                    </td>
+                    <td>
+                        <input type="text" id="topic" name="topic" placeholder="Enter topic" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name">Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" name="name" placeholder="Enter poster name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="details">Poster details:</label>
+                    </td>
+                    <td>
+                        <textarea id="details" name="details" placeholder="Enter poster details" required
+                            minlength="10"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="status">Status</label>
+                    </td>
+                    <td>
+                        <input type="text" id="status" name="status" placeholder="Enter poster status" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="image">Image URL</label>
+                    </td>
+                    <td>
+                        <input type="url" id="image" name="image" placeholder="Enter poster image url" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" class="submit_button" value="Create Trade">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <%- include('../partials/footer.ejs') %>

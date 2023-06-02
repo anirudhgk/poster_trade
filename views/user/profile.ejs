@@ -1,0 +1,119 @@
+<%- include('../partials/header.ejs')%>
+    <div class="body_content">
+        <h4>
+            Welcome <%=user.firstName%>!!<br> Your trades:
+        </h4>
+        <% if(trades.length){ %>
+            <table class="profile_table">
+                <tr>
+                    <th>Trade Name</th>
+                    <th>Topic</th>
+                    <th>Status</th>
+                </tr>
+                <% trades.forEach(trade=> { %>
+                    <tr>
+                        <td>
+                            <a class="profile_a" href="/trades/<%= trade.id %>">
+                                <%= trade.name %>
+                            </a>
+                            <!-- <%= trade.name %> -->
+                        </td>
+                        <td>
+                            <%= trade.topic %>
+                        </td>
+                        <td>
+                            <%= trade.status %>
+                        </td>
+                        <td>
+                            <form class="float-left">
+                                <button type="submit" formmethod="GET" class="edit_button"
+                                    formaction="/trades/<%= trade._id %>/edit">Edit</button>
+                                <button type="submit" formmethod="POST" class="delete_button"
+                                    formaction="/trades/<%= trade._id %>?_method=DELETE">Delete</button>
+                                <% if(trade.status=="Pending" ) { %>
+                                    <button class="edit_button" type="submit" formmethod="GET"
+                                        formaction="/trades/<%=trade.posterRequestedId%>/manage">Manage Trade</button>
+                                    <% } %>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </table>
+            <% } else { %>
+                <p>You have not hosted any trades</p>
+                <% } %>
+                    <!-- Table for watchlist -->
+                    <% if(watchlist.length){ %>
+                        <h4>
+                            Your watchlisted trades:
+                        </h4>
+                        <table class="profile_table">
+                            <tr>
+                                <th>Trade Name</th>
+                                <th>Topic</th>
+                                <th>Status</th>
+                            </tr>
+                            <% watchlist.forEach(item=> { %>
+                                <tr>
+                                    <td>
+                                        <a class="profile_a" href="/trades/<%= item.tradeWatch.id%>">
+                                            <%= item.tradeWatch.name %>
+                                        </a>
+                                        <!-- <%= item.tradeWatch.name %> -->
+                                    </td>
+                                    <td>
+                                        <%= item.tradeWatch.topic %>
+                                    </td>
+                                    <td>
+                                        <%= item.tradeWatch.status %>
+                                    </td>
+                                    <td>
+                                        <form class="float-left">
+                                            <button type="submit" formmethod="POST" class="delete_button"
+                                                formaction="/users/<%=item.tradeWatch.id%>/unwatch">Unwatch</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </table>
+                        <% } %>
+                            <!-- Table for offers -->
+                            <% if(offers.length && trades.length){ %>
+                                <h4>
+                                    Your offered posters:
+                                </h4>
+                                <table class="profile_table">
+                                    <tr>
+                                        <th>Trade Name</th>
+                                        <th>Topic</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    <% offers.forEach((item)=> { %>
+                                        <% if(item.posterRequestedId){ %>
+                                            <tr>
+                                                <td>
+                                                    <a class="profile_a" href="/trades/<%= item.posterRequestedId.id%>">
+                                                        <%= item.posterRequestedId.name %>
+                                                    </a>
+                                                    <!-- <%= item.posterRequestedId.name %> -->
+                                                </td>
+                                                <td>
+                                                    <%= item.posterRequestedId.topic %>
+                                                </td>
+                                                <td>
+                                                    <%= item.posterRequestedId.status %>
+                                                </td>
+                                                <td>
+                                                    <form class="float-left">
+                                                        <button type="submit" formmethod="POST" class="delete_button"
+                                                            formaction="/trades/<%=item.posterRequestedId.id%>/withdraw">Withdraw
+                                                            Offer</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                                <% }); %>
+                                </table>
+                                <% } %>
+    </div>
+    <%- include('../partials/footer.ejs')%>
